@@ -7,7 +7,9 @@
 ## Links
 * [Project Trello](https://trello.com/w/mlproject36)
 * [Project Proposal - OverLeaf](https://www.overleaf.com/7497962469qwbbdxyxrmjg)
-* [Project Proposal - PDF](https://github.com/waltster/CSCE-585/blob/main/docs/proposal/CSCE_585_Project_Report.pdf)
+* [Project Proposal - PDF](docs/proposal/CSCE_585_Project_Report.pdf)
+* [Single Page Proposal - PDF](docs/proposal/Single_Page_Proposal.pdf)
+* [Project Pitch Presentation - PDF](docs/Project_Presentation.pdf)
 
 ## Directory Structure
 * `docs` - Documentation, project papers, etc.
