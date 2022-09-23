@@ -1,6 +1,6 @@
 # Changelog
 
-## Latest Commit
+# 0.0
 * Added Changelog
 * Added `src/model/content/labelmap.pbtxt` - This provides the labels and classification numbers for each of the classifications in the dataset. (see `src/data/demo_date_gatherer` notebook for more information)
 * Added `notebooks` directory to store utility notebooks

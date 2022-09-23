@@ -4,16 +4,7 @@
 * `python3`, `pip3`
 
 ## Usage
-### 1. Data Preparation
-* The data set used to train the model can be found in `src/data`, which includes both `test_labels.csv`, `train_labels.csv`, and `images`.
-* A notebook for a demo-data gatherer has been created. To see how information about the images is collected and parsed, run this as a Jupyter notebook.
-
-To prepare the data set for training, first run the following command. This will generate a single file, `train.record` that will contain all of the
-information necessary to begin training a model.
-```sh
-$ cd src/model
-$ python3 ./generate_tfrecord.py --csv_input=../data/train_labels.csv --image_dir=../data/images --output_path=train.record
-```
+See [`src/notebooks/Training Model.ipynb`](src/notebooks/Training\ Model.ipynb) for training.
 
 ## Authors
 * Logan Nall
