@@ -1,0 +1,29 @@
+item {
+  id: 1
+  name: "military tank"
+}
+
+item {
+  id: 2
+  name: "military aircraft"
+}
+
+item {
+  id: 3
+  name: "military truck"
+}
+
+item {
+  id: 4
+  name: "civilian aircraft"
+}
+
+item {
+  id: 5
+  name: "civilian car"
+}
+
+item {
+  id: 6
+  name: "military helicopter"
+}
