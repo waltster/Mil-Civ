@@ -9,9 +9,9 @@ if [ "$1" == "train" ]; then
     --pipeline_config_path=content/mobilenet_v2.config \
     --model_dir=training/ \
     --alsologtostderr \
-    --num_train_steps=8000 \
+    --num_train_steps=55000\
     --sample_1_of_n_eval_examples=1 \
-    --num_eval_steps=1000
+    --num_eval_steps=2000
   echo "Done training"
 elif [ "$1" == "eval" ]; then
   echo "Beginning evaluation..."
