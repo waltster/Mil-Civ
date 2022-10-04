@@ -4,7 +4,7 @@
 * `python3`, `pip3`
 
 ## Usage
-See [`src/notebooks/Training Model.ipynb`](src/notebooks/Training\ Model.ipynb) for training.
+See [`src/notebooks/Training Model.ipynb`](./src/notebooks/Training Model.ipynb) for training.
 
 ## Authors
 * Logan Nall
@@ -14,9 +14,10 @@ See [`src/notebooks/Training Model.ipynb`](src/notebooks/Training\ Model.ipynb) 
 ## Links
 * [Project Trello](https://trello.com/w/mlproject36)
 * [Project Proposal - OverLeaf](https://www.overleaf.com/7497962469qwbbdxyxrmjg)
-* [Project Proposal - PDF](docs/proposal/CSCE_585_Project_Report.pdf)
-* [Single Page Proposal - PDF](docs/proposal/Single_Page_Proposal.pdf)
+* [Project Proposal - PDF](docs/CSCE_585_Project_Report.pdf)
+* [Single Page Proposal - PDF](docs/Single_Page_Proposal.pdf)
 * [Project Pitch Presentation - PDF](docs/Project_Presentation.pdf)
+* [Project Milestone 1 - PDF](docs/CSCE_585_Project_Milestone_1.pdf)
 
 ## Directory Structure
 * `docs` - Documentation, project papers, etc.
