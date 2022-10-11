@@ -4,8 +4,20 @@
 * `python3`, `pip3`
 
 ## Usage
-See [`src/notebooks/Training Model.ipynb`](./src/notebooks/Training Model.ipynb) for training.
+### 1. Install Dependencies
+[Install Python](https://www.python.org/) from this link.
 
+```shell
+$ python -m ensurepip --upgrade # Install pip if it was not installed automatically
+$ pip install --upgrade pip
+$ pip install tensorflow
+$ pip install tensorflow-object-detection-api
+$ pip install notebook
+```
+
+### 2. Run the Provided Notebooks
+The default notebook to use when building and configuring the model
+is
 ## Authors
 * Logan Nall
 * Walter Pach
