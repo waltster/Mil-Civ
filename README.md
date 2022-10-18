@@ -1,7 +1,10 @@
 # CSCE-585 Project
 ## Dependencies
 * `wget`
-* `python3`, `pip3`
+* `python` v3
+* `pip` v3
+* `protobuf`
+* `grpc`
 
 ## Usage
 ### 1. Install Dependencies
@@ -17,11 +20,13 @@ $ pip install notebook
 
 ### 2. Run the Provided Notebooks
 The default notebook to use when building and configuring the model
-is
+is `src/notebooks/Training Model.ipynb`. This notebook can be used step by
+step to prepare the environment, prepare the data, and train the model.
+
 ## Authors
-* Logan Nall
 * Walter Pach
 * Vera Svensson
+* Logan Nall
 
 ## Links
 * [Project Trello](https://trello.com/w/mlproject36)
@@ -40,4 +45,6 @@ is
 * `test` - Code being tested and needs verified by the team.
 * `dev` - In-development code, fine to merge into at any time.
 
-When making changes, create a new branch and then merge it into dev. This will help with concurrent edits and teamwork and prevent losing each others works.
+When making changes, create a new branch and then merge it into dev.
+This will help with concurrent edits and teamwork and prevent losing each others
+works.
