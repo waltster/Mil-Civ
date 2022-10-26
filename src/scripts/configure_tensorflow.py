@@ -5,12 +5,12 @@ batch_size = 4
 num_steps = 50000
 num_eval_steps = 1000
 
-train_record_path = "../train.record"
-test_record_path = "../test.record"
-model_dir = "../training"
+train_record_path = "./train.record"
+test_record_path = "./test.record"
+model_dir = "./training"
 labelmap_path = "labelmap.pbtxt"
-pipeline_config_path = "mobilenet_v2.config"
-fine_tune_checkpoint = "mobilenet_v2/mobilenet_v2.ckpt-1"
+pipeline_config_path = "content/mobilenet_v2.config"
+fine_tune_checkpoint = "content/mobilenet_v2/mobilenet_v2.ckpt-1"
 
 with open(pipeline_config_path) as f:
     config = f.read()

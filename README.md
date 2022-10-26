@@ -104,7 +104,7 @@ Begin training by `cd`ing up one directory to `src/model` and running the follow
 ```sh
 $ python3 models/research/object_detection/model_main_tf2.py \
     --pipeline_config_path=content/mobilenet_v2.config \
-    --model_dir="../training" \
+    --model_dir="./training" \
     --alsologtostderr \
     --num_train_steps=50000 \
     --sample_1_of_n_eval_examples=1 \
