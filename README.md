@@ -144,7 +144,6 @@ works.
 ## <span id="authors"></span> Authors
 * Walter Pach
 * Vera Svensson
-* Logan Nall
 
 ## <span id="links"></span> Links
 * [Project Trello](https://trello.com/w/mlproject36)
