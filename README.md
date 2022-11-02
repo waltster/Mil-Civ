@@ -30,6 +30,7 @@ $ pip install notebook
 $ pip install opencv-python==4.6.0.66
 $ pip install opencv-python-headless==4.6.0.66
 $ pip install protobuf==3.19
+$ pip install flask
 ```
 
 If you encounter an error with the `python` or `pip` command not found, try running the below, and alias the reverse if you have the opposite problem.
