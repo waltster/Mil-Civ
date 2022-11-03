@@ -1,5 +1,3 @@
-el_output_image = document.getElementById('output_image');
-
 // TODO: Move into front-end when ready.
 function getImageFromInput(file, reader, output_image) {
   reader.onloadend = function() {
@@ -29,6 +27,7 @@ function getImageFromInput(file, reader, output_image) {
 
 function transmitToServer(img){
   var request = new XMLHttpRequest();
+  var el_output_image = document.getElementById('output_image');
 
   request.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200){

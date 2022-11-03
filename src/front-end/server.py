@@ -19,7 +19,7 @@ category_index = None
 def load_model():
     global model
     global category_index
-    
+
     labelmap_path = "../model/labelmap.pbtxt"
     category_index = label_map_util.create_category_index_from_labelmap(labelmap_path, use_display_name=True)
     tf.keras.backend.clear_session()
@@ -50,6 +50,8 @@ def use_model(image):
 
 
     im = Image.fromarray(image_np)
+
+    print(output_dict['detection_classes'])
 
     return im
 

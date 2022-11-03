@@ -4,5 +4,5 @@
 src/model/inference_graph
 src/model/training
 src/model/*.record
-src/model/models
+#src/model/models
 **/__pycache__
