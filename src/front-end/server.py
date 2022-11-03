@@ -9,6 +9,7 @@ import io
 import os
 import pandas as pd
 import tensorflow as tf
+import time
 
 api = Flask(__name__)
 CORS(api)
@@ -19,7 +20,7 @@ category_index = None
 def load_model():
     global model
     global category_index
-    
+
     labelmap_path = "../model/labelmap.pbtxt"
     category_index = label_map_util.create_category_index_from_labelmap(labelmap_path, use_display_name=True)
     tf.keras.backend.clear_session()
@@ -31,6 +32,7 @@ def load_model():
 # TODO: return modified image
 def use_model(image):
     global model
+    global category_index
 
     print("Running inference...")
     image_np = reshape(image)
@@ -48,10 +50,15 @@ def use_model(image):
         line_thickness=6
     )
 
-
     im = Image.fromarray(image_np)
 
-    return im
+    classes = output_dict['detection_classes']
+    scores = output_dict['detection_scores']
+
+    return im, [{'class':category_index.get(value)['name'],'score':str(scores[index])}
+        for index,value in enumerate(classes)
+            if scores[index] > 0.5
+    ]
 
 ################################################################################
 # Image Encoding/Decoding stuff                                                #
@@ -80,22 +87,29 @@ def ping():
 # Method to process image.
 # Accepts an image in Base-64, processes it using the model, then
 # sends back an image with the detected objects highlighted.
-@api.route('/process', methods=['GET'])
+@api.route('/process', methods=['POST'])
 def process_image():
-    if request.method == 'GET':
-        if request.args is None or request.args.get("image") is None:
+    if request.method == 'POST':
+        if request.data is None:
             return {"error": "400"}
 
         processed_image = None
 
         try:
-            image = request.args.get("image")
+            image = request.json
+            image = image["image"]
+
+
             decoded_image = decode_base64_as_image(bytes(image, encoding='utf-8'))
-            processed_image = use_model(decoded_image)
+            begin_time = time.time()
+            processed_image, detected_classes = use_model(decoded_image)
+            end_time = time.time()
             encoded_image = encode_image_as_base64(processed_image)
             encoded_image = encoded_image.decode("utf-8")
 
-            return make_response(jsonify({"image": f"{encoded_image}", "stats": ""}), 200)
+            total_time = round(end_time - begin_time, 4)
+
+            return make_response(jsonify({"image": f"{encoded_image}", "stats": detected_classes, "time": total_time}), 200)
         except Exception as e:
             print(f"An exception occured. Sending 400: {e}")
             return make_response(jsonify({"error": "Unable to process image"}), 400)

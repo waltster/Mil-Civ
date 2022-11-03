@@ -1,5 +1,5 @@
-## <span id="guided_cmd"></span> Option 1: Guided Command-Line
-### Preparing the Environment
+# <span id="guided_cmd"></span> Option 1: Guided Command-Line
+## Preparing the Environment
 Make sure that you are `cd`'d into the project directory before running these commands.
 
 First, clone TensorFlow's supplied models and support:
@@ -21,7 +21,7 @@ $ python object_detection/builders/model_builder_tf2_test.py
 $ cd ../../../  # Will place you back in src
 ```
 
-### Assembling the Data & Preparing the Records
+## Assembling the Data & Preparing the Records
 TensorFlow records can be prepared using the script found in `src/scripts/prepare_records.py`. Simply running this script will create the TFRecords:
 
 ```sh
@@ -31,7 +31,7 @@ $ cd .. # Brings you back to src
 ```
 This should output that two files were created: `test.record` and `train.record`
 
-### Downloading the Base Model
+## Downloading the Base Model
 Next, make the directory `model/content`:
 ```sh
 $ mkdir model/content
@@ -51,14 +51,14 @@ $ wget wget https://raw.githubusercontent.com/tensorflow/models/master/research/
 $ mv ssd_mobilenet_v2_320x320_coco17_tpu-8.config mobilenet_v2.config
 ```
 
-### Configuring TensorFlow
+## Configuring TensorFlow
 To configure TensorFlow, make sure you are `cd`'d into the `src/model/content` directory and run the `configre_tensorflow.py` script:
 
 ```sh
 $ python ../../scripts/configure_tensorflow.py
 ````
 
-### Training the Model
+## Training the Model
 Begin training by `cd`ing up one directory to `src/model` and running the following command:
 
 ```sh
@@ -70,11 +70,11 @@ $ python3 models/research/object_detection/model_main_tf2.py \
     --sample_1_of_n_eval_examples=1 \
     --num_eval_steps=1000
 ```
-### Exporting the Model
+## Exporting the Model
 
-### Testing the Model
+## Testing the Model
 
-## <span id="notebooks"></span> Option 2: Running the Provided Notebooks
+# <span id="notebooks"></span> Option 2: Running the Provided Notebooks
 The default notebook to use when building and configuring the model
 is `src/notebooks/Training Model.ipynb`. This notebook can be used step by
 step to prepare the environment, prepare the data, and train the model.
