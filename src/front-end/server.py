@@ -2,16 +2,56 @@
 from base64 import b64encode, b64decode
 from PIL import Image
 from urllib.parse import unquote
-import io
 from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS
+from inferenceutils import *
+import io
+import os
+import pandas as pd
+import tensorflow as tf
 
 api = Flask(__name__)
 CORS(api)
 
+model = None
+category_index = None
+
+def load_model():
+    global model
+    global category_index
+    
+    labelmap_path = "../model/labelmap.pbtxt"
+    category_index = label_map_util.create_category_index_from_labelmap(labelmap_path, use_display_name=True)
+    tf.keras.backend.clear_session()
+
+    print("Beginning to load the model...")
+    model = tf.saved_model.load(f'../model/inference_graph/saved_model')
+    print("Done loading model.")
+
 # TODO: return modified image
 def use_model(image):
-    return image
+    global model
+
+    print("Running inference...")
+    image_np = reshape(image)
+
+    output_dict = run_inference_for_single_image(model, image_np)
+    vis_util.visualize_boxes_and_labels_on_image_array(
+        image_np,
+        output_dict['detection_boxes'],
+        output_dict['detection_classes'],
+        output_dict['detection_scores'],
+        category_index,
+        min_score_thresh=0.5,
+        instance_masks=output_dict.get('detection_masks_reframed', None),
+        use_normalized_coordinates=True,
+        line_thickness=6
+    )
+
+
+    im = Image.fromarray(image_np)
+
+    return im
 
 ################################################################################
 # Image Encoding/Decoding stuff                                                #
@@ -23,7 +63,7 @@ def decode_base64_as_image(b_in):
 
 def encode_image_as_base64(image_in):
     image_byte_array = io.BytesIO()
-    image_in.save(image_byte_array, format=image_in.format)
+    image_in.save(image_byte_array, format='PNG')
     image_byte_array = image_byte_array.getvalue()
 
     base64_data = b64encode(image_byte_array)
@@ -55,7 +95,7 @@ def process_image():
             encoded_image = encode_image_as_base64(processed_image)
             encoded_image = encoded_image.decode("utf-8")
 
-            return make_response(jsonify({"image": f"{encoded_image}"}), 200)
+            return make_response(jsonify({"image": f"{encoded_image}", "stats": ""}), 200)
         except Exception as e:
             print(f"An exception occured. Sending 400: {e}")
             return make_response(jsonify({"error": "Unable to process image"}), 400)
@@ -66,4 +106,5 @@ def process_image():
         return make_response(jsonify({"error": "Only GET supported"}), 400)
 
 if __name__ == "__main__":
+    load_model()
     api.run()

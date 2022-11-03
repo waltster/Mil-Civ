@@ -8,14 +8,16 @@ function getImageFromInput(file, reader, output_image) {
   reader.onloadend = function() {
     var data = reader.result;
 
-    console.log(data);
-
-    if(data.indexOf('data:image/png;base64,') >= 0 || data.indexOf('data:image/jpeg,') >= 0){
+    if(data.indexOf('data:image/png;base64,') >= 0){
       data = data.split('data:image/png;base64,')[1];
 
-      console.log(transmitToServer(data));
+      transmitToServer(data);
+    } else if(data.indexOf('data:image/jpeg;base64,') >= 0){
+      data = data.split('data:image/jpeg;base64,')[1];
+
+      transmitToServer(data);
     } else{
-      console.log('Unknown type')
+      alert('Unknown type of image. Please choose another')
       return -1;
     }
   }
@@ -35,7 +37,16 @@ function transmitToServer(img){
     if(this.readyState == 4 && this.status == 200){
       var response = JSON.parse(request.responseText);
 
-      document.getElementById('output_image').src = `data:image/png;base64,${response.image}`;
+      if(response.error){
+        alert('Error in fetching processed image. Please try again.');
+        document.getElementById('output_image').src = '';
+        return;
+      }
+
+      var image = response.image;
+      var stats = response.stats;
+
+      document.getElementById('output_image').src = `data:image/png;base64,${image}`;
     }
   };
 
