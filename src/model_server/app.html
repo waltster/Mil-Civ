@@ -1,0 +1,62 @@
+<html>
+  <body>
+    <script>
+      // TODO: Move into front-end when ready.
+      function getImageFromInput(file, reader, preview) {
+        reader.onloadend = function() {
+          var data = reader.result;
+
+          console.log(data);
+
+          if(data.indexOf('data:image/png;base64,') >= 0 || data.indexOf('data:image/jpeg,') >= 0){
+            data = data.split('data:image/png;base64,')[1];
+
+            console.log(transmitToServer(data));
+          } else{
+            console.log('Unknown type')
+            return -1;
+          }
+        }
+
+        if(file) {
+          reader.readAsDataURL(file);
+        } else{
+          preview.src = '';
+          return -1;
+        }
+      }
+
+      function transmitToServer(img){
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function() {
+          if(this.readyState == 4 && this.status == 200){
+            var response = JSON.parse(request.responseText);
+
+            document.getElementById('preview').src = response.image;
+          }
+        };
+
+        request.open('GET', `http://127.0.0.1:5000/process?image=${img}`, true);
+        request.send();
+      }
+
+      function processImage(){
+        var file = document.getElementById('file_input').files[0];
+        var reader = new FileReader();
+        var preview = document.getElementById('preview');
+
+        var img = getImageFromInput(file, reader, preview);
+
+        if(img == -1){
+          alert('Unable to load that image from your system!');
+          return;
+        }
+      }
+    </script>
+    <input type="file" id="file_input" onchange="processImage()" />
+    <br />
+    <br />
+    <img id="preview" src="" height="200" alt="Image preview..." />
+  </body>
+</html>
