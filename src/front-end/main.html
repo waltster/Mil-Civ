@@ -30,10 +30,10 @@
                         <div class="drag-drop-area">
                             <!-- TODO: add upload icon -->
                             <h3>Drag & drop image here</h3>
-                            <label class="browse-text"> 
-                                or 
+                            <label class="browse-text">
+                                or
                                 <span class="browse-files">
-                                    <input type="file" class="hide"/> 
+                                    <input type="file" class="hide" id="file_input" onchange="processImage()" />
                                     <span class="browse-files-link">browse file</span>
                                 </span>
                                 from device
@@ -64,7 +64,7 @@
                             </div>
 
                             <!-- Mock result image -->
-                            <img src="mock-result.jpg" alt="mock result image">
+                            <img id="output_image" src="" alt="mock result image">
                         </div>
                     </div>
                 </form>
