@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+        <script type="text/javascript" src="js/processing.js"></script>
+
+        <title>Military Vs Civilian Vehicle Image Classifier</title>
+    </head>
+    <body>
+        <div class="app">
+
+            <!-- Header -->
+            <div class="header-container">
+                <h1 class="header">Vehicle Image Classifier</h1>
+                <h3 class="header"> Military vs Civilian </h3>
+                <p class="about">Differentiating between civilian and military vehicles. Using ... model.  Developed by ... etc etc</p>
+            </div>
+
+            <!-- Everything under header -->
+            <div class="container">
+                <form class="form-container" id="form">
+
+                    <!-- Input square -->
+                    <div class="upload-container">
+
+                        <!-- Drag and drop square -->
+                        <div class="drag-drop-area">
+                            <!-- TODO: add upload icon -->
+                            <h3>Drag & drop image here</h3>
+                            <label class="browse-text"> 
+                                or 
+                                <span class="browse-files">
+                                    <input type="file" class="hide"/> 
+                                    <span class="browse-files-link">browse file</span>
+                                </span>
+                                from device
+                            </label>
+                            <!-- TODO: Add uploading error view -->
+                            <!-- TODO: add progress bar -->
+                            <!-- TODO: add file uploaded + preview view -->
+                        </div>
+
+                        <!-- Upload button -->
+                        <button type="submit" class="upload-button"> Upload </button>
+                    </div>
+
+                    <!-- Output square -->
+                    <div class="output-container" id="output">
+                        <div class="result-container">
+                            <div class="result-details">
+                                <!-- TEST if button eventlistener works -->
+                                <p id="test-output"></p>
+
+                                <!-- Mock result detail view -->
+                                <p>Time: 0.0380 s</p>
+                                <p>Objects found:</p>
+                                <p>* Military aircraft: 1</p>
+                                <p>Military objects found: 1</p>
+                                <p>Civilian objects found: 0</p>
+                                <p>Total objects found: 1</p>
+                            </div>
+
+                            <!-- Mock result image -->
+                            <img src="mock-result.jpg" alt="mock result image">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

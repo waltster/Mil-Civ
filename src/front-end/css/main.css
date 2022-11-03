@@ -1,0 +1,149 @@
+html,
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    --header: var(--background);
+    --light-font-color: #F1FAEE;
+    --background: #1D4749;
+    --input-background: #F1FAEE;
+    --border:  var(--background);
+    --button: var(--background);
+    --styled-font: "Poppins", sans-serif;
+}
+
+.hide{
+    opacity: 0;
+    width: 0%;
+    height: 0%;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--header);
+    color: var(--light-font-color);
+    width: 100%;
+    flex: 10%;
+}
+
+.header{
+    text-transform: capitalize;
+    font-family: var(--styled-font);
+}
+
+.header-container h3{
+    margin-top: 0px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background);
+    width: 100%;
+    flex: 100%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 16px;
+    flex: 40%;
+    width: 100%;
+}
+
+.upload-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--input-background);
+    width: 40%;
+    flex: 100%;
+
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.drag-drop-area{
+    text-align: center;
+
+    flex: 100%;
+    width: 90%;
+    margin: 24px;
+    margin-bottom: 0px;
+    padding-bottom: 16px;
+
+    font-family: var(--styled-font);
+
+    border: 2px dashed var(--border);
+    border-radius: 30px;
+}
+
+.browse-files-link{
+    color: var(--background);
+    font-weight: bolder;
+	cursor: pointer;
+}
+
+.upload-button{
+    margin: 16px;
+    padding: 8px 56px;
+
+    font-family: var(--styled-font);
+
+    background-color: var(--button);
+    color: var(--light-font-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.result-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--input-background);
+    margin: 16px;
+    padding: 16px;
+    flex: 100%;
+    min-width: 40%;  /* To make it atleast the same width as input box */
+    max-width: 100%; /* To prevent overflowing the page width */
+
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.output-container{
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 10px;
+    flex: 100%;
+    width: 100%;
+}
+
+.output-container img{
+    width: 100%;
+    border: 1px solid var(--background);
+}
