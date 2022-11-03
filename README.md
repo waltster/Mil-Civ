@@ -50,3 +50,4 @@ works.
 * [Single Page Proposal - PDF](docs/Single_Page_Proposal.pdf)
 * [Project Pitch Presentation - PDF](docs/Project_Presentation.pdf)
 * [Project Milestone 1 - PDF](docs/CSCE_585_Project_Milestone_1.pdf)
+* [Project Milestone 2 - PDF](docs/CSCE_585_Project_Milestone_2.pdf)
