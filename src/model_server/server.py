@@ -4,8 +4,10 @@ from PIL import Image
 from urllib.parse import unquote
 import io
 from flask import Flask, jsonify, request, make_response
+from flask_cors import CORS
 
 api = Flask(__name__)
+CORS(api)
 
 # TODO: return modified image
 def use_model(image):

@@ -33,11 +33,11 @@
           if(this.readyState == 4 && this.status == 200){
             var response = JSON.parse(request.responseText);
 
-            document.getElementById('preview').src = response.image;
+            document.getElementById('preview').src = `data:image/png;base64,${response.image}`;
           }
         };
 
-        request.open('GET', `http://127.0.0.1:5000/process?image=${img}`, true);
+        request.open('GET', `http://127.0.0.1:5000/process?image=${encodeURIComponent(img)}`, true);
         request.send();
       }
 
