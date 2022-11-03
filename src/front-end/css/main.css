@@ -7,6 +7,7 @@ body{
 
     --header: var(--background);
     --light-font-color: #F1FAEE;
+    --dark-font: var(--background);
     --background: #1D4749;
     --input-background: #F1FAEE;
     --border:  var(--background);
@@ -48,6 +49,10 @@ body{
     margin-top: 0px;
 }
 
+.header-container svg{
+    color: var(--light-font-color);
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -82,6 +87,9 @@ body{
 }
 
 .drag-drop-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 
     flex: 100%;
@@ -97,7 +105,7 @@ body{
 }
 
 .browse-files-link{
-    color: var(--background);
+    color: var(--dark-font);
     font-weight: bolder;
 	cursor: pointer;
 }
