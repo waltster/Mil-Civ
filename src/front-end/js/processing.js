@@ -101,7 +101,7 @@ function transmitToServer(img){
         writeToElement('output_list', `<li>${detection['class']} - <code>${detection['score']*100}%</code></li>`);
       }
 
-      military_found = military_aircraft_found + military_truck_found + military_tank_found;
+      military_found = military_aircraft_found + military_truck_found + military_tank_found + military_helicopter_found;
       civilian_found = civilian_aircraft_found + civilian_car_found;
 
       overrideElement('output_time', response.time);
@@ -127,11 +127,11 @@ function processImage(){
 
   var img = getImageFromInput(file, reader, output_image);
 
-  show('output')
+  showElement('output')
 
   if(img == -1){
     alert('Unable to load that image from your system!');
-    hide('output')
+    hideElement('output')
     return;
   }
 }
