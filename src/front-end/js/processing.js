@@ -1,7 +1,4 @@
-function init(){
-    const form = document.getElementById("form");
-    form.addEventListener('submit', to_base64);
-}
+el_output_image = document.getElementById('output_image');
 
 // TODO: Move into front-end when ready.
 function getImageFromInput(file, reader, output_image) {
@@ -39,14 +36,14 @@ function transmitToServer(img){
 
       if(response.error){
         alert('Error in fetching processed image. Please try again.');
-        document.getElementById('output_image').src = '';
+        el_output_image.src = '';
         return;
       }
 
       var image = response.image;
       var stats = response.stats;
 
-      document.getElementById('output_image').src = `data:image/png;base64,${image}`;
+      el_output_image.src = `data:image/png;base64,${image}`;
     }
   };
 
@@ -57,7 +54,6 @@ function transmitToServer(img){
 function processImage(){
   var file = document.getElementById('file_input').files[0];
   var reader = new FileReader();
-  var output_image = document.getElementById('output_image');
 
   var img = getImageFromInput(file, reader, output_image);
 
