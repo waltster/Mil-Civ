@@ -5,8 +5,6 @@ jobs:
   lint:
     name: Lint UI code base
     runs-on: ubuntu-latest
-    with:
-          fetch-depth: 0
 
     steps:
       - name: Checkout code
