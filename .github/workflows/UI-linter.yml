@@ -16,5 +16,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_JAVASCRIPT_STANDARD: false
           DEFAULT_BRANCH: dev
-          FILTER_REGEX_INCLUDE: .*src/front-end.*
+          FILTER_REGEX_INCLUDE: .*src/front-end/js.*
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
