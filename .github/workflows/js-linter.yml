@@ -1,0 +1,16 @@
+name: JavaScrips Linting
+on: push
+jobs:
+  lint:
+    name: Lint JavaScript code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v3.17.0
+        env:
+          DEFAULT_BRANCH: dev
+          FILTER_REGEX_INCLUDE: .*src/front-end/js.*
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
