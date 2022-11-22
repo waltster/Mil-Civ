@@ -29,7 +29,6 @@ def load_model():
     model = tf.saved_model.load(f'../model/inference_graph/saved_model')
     print("Done loading model.")
 
-# TODO: return modified image
 def use_model(image):
     global model
     global category_index
