@@ -1,3 +1,0 @@
-inference_graph filter=lfs diff=lfs merge=lfs -text
-train.record filter=lfs diff=lfs merge=lfs -text
-test.record filter=lfs diff=lfs merge=lfs -text
