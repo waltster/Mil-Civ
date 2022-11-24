@@ -69,7 +69,7 @@ def decode_base64_as_image(b_in):
 
 def encode_image_as_base64(image_in):
     image_byte_array = io.BytesIO()
-    image_in.save(image_byte_array, format='PNG')
+    image_in.save(image_byte_array, format='JPEG')
     image_byte_array = image_byte_array.getvalue()
 
     base64_data = b64encode(image_byte_array)
