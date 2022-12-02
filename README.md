@@ -1,4 +1,4 @@
-# CSCE-585 Project
+# MIl/CIV Visual ML System for Identifying and Minimizing Civilian Fatality in Urban War Zones
 ## Contents
 * [Dependencies](#dependencies)
   * [Installing Key Dependencies](#key_dependencies)
