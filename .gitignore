@@ -4,3 +4,5 @@
 src/model/training
 src/model/models
 **/__pycache__
+src/test/*.xlsx
+src/test/results.csv
