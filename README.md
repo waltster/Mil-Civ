@@ -1,4 +1,4 @@
-# MIl/CIV Visual ML System for Identifying and Minimizing Civilian Fatality in Urban War Zones
+# MIl/CIV Visual ML System for Identifying and Minimizing Civilian Fatality in Urban War Zone Targetting
 ## Contents
 * [Dependencies](#dependencies)
   * [Installing Key Dependencies](#key_dependencies)
