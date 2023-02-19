@@ -44,10 +44,4 @@ works.
 * Vera Svensson
 
 ## <span id="links"></span> Links
-* [Project Trello](https://trello.com/w/mlproject36)
-* [Project Proposal - OverLeaf](https://www.overleaf.com/7497962469qwbbdxyxrmjg)
-* [Project Proposal - PDF](docs/CSCE_585_Project_Report.pdf)
-* [Single Page Proposal - PDF](docs/Single_Page_Proposal.pdf)
-* [Project Pitch Presentation - PDF](docs/Project_Presentation.pdf)
-* [Project Milestone 1 - PDF](docs/CSCE_585_Project_Milestone_1.pdf)
-* [Project Milestone 2 - PDF](docs/CSCE_585_Project_Milestone_2.pdf)
+* [Project Report](./docs/CSCE_585_Final_Milestone.pdf)
